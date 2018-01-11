@@ -29,18 +29,18 @@ class DogForm extends Component {
   }
 
   onFormSubmit(e){
-    e.preventDefault() // Stop form submit
-
-    this.fileUpload(this.state.file).then((response)=>{
-      console.log(response.data);
-    })
+    e.preventDefault()
+    this.fileUpload(this.state.file)
   }
+
   onChange(e) {
     this.setState({file:e.target.files[0]})
   }
+
   fileUpload(file){
     const {name, breed, description} = this.state;
-    const url = 'http://localhost:3001/api/users/1/dogs';
+    const id = sessionStorage.getItem('id');
+    const url = `http://localhost:3001/api/users/${id}/dogs`;
     const formData = new FormData();
     formData.append('name',name)
     formData.append('breed',breed)
@@ -51,12 +51,11 @@ class DogForm extends Component {
             'content-type': 'multipart/form-data',
         }
     }
-
-
     return  post(url, formData,config)
   }
 
   render() {
+
     return (
       <form onSubmit={this.onFormSubmit}>
         <label>
@@ -71,14 +70,11 @@ class DogForm extends Component {
           Description:
           <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
         </label>
-        <h1>File Upload</h1>
         <input type="file" name="image" onChange={this.onChange} />
         <button type="submit">Upload</button>
       </form>
    )
   }
 }
-
-
 
 export default DogForm;

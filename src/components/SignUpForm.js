@@ -44,7 +44,7 @@ export default class SignUpForm extends Component {
   render() {
     const { status } = this.state;
     if(status === "200") {
-      return <Redirect to='/' />;
+      return <Redirect to='/signin' />;
     }
 
     const required = (value) => {
@@ -58,7 +58,6 @@ export default class SignUpForm extends Component {
         return `${value} is not a valid email.`
       }
     };
-
 
     return (
       <Form onSubmit={this.handleSubmit}>

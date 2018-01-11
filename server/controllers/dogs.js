@@ -11,7 +11,7 @@ cloudinary.config({
 module.exports = {
   create(req, res) {
     var url=null;
-    var imageFile = req.files.file;
+    const imageFile = req.files.file;
     cloudinary.uploader.upload(imageFile.path, function(result){
       url = result.url;
       return Dog

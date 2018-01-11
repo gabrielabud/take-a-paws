@@ -5,6 +5,7 @@ import { DOGS } from '../App';
 class DogList extends Component {
 
   render() {
+    
     return (
       <div id="dog-list">
       {

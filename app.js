@@ -38,8 +38,18 @@ const authRoute = require('./server/routes/auth.js')(app, passport);
 require('./server/routes')(app);
 require('./server/config/passport/passport.js')(passport, models.User);
 
+app.get('/id/:email', (req, res) => {
+  models.User.findOne({
+    where: {
+      email: req.params.email
+    }
+  }).then((user) => {
+    res.status(200).send({ id: user.id })
+  })
+});
+
 app.get('/error', (req, res) => res.status(200).send({
-  message: "user not found"
+  message: "404"
 }));
 
 app.get('/', (req, res) => res.status(200).send({

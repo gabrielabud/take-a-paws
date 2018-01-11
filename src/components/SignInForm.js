@@ -32,10 +32,15 @@ export default class SignInForm extends Component {
     event.preventDefault();
     const { email, password } = this.state;
     axios.post('http://localhost:3001/signin', { email, password })
-      .then((response) => this.setState({ status: response.data.message}));
+      .then((response) => this.setState({ status: response.data.message}))
+        .then(axios.get(`http://localhost:3001/id/${email}`)
+          .then(function (response) {
+            sessionStorage.setItem('id', response.data.id);
+          })
+        );
   }
-  render() {
 
+  render() {
       const { status } = this.state;
       if(status === "200") {
         return <Redirect to='/' />;
@@ -67,5 +72,4 @@ export default class SignInForm extends Component {
       </Form>
     );
   }
-
 }
