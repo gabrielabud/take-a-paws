@@ -34,7 +34,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "npm run test-integration",
-    "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.js",
+    "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.js --exit",
     "eject": "react-scripts eject",
     "start:dev": "nodemon ./bin/www"
   },
@@ -52,7 +52,7 @@
   },
   "babel": {
     "presets": [
-      "env"
+      "es2015"
     ]
   },
   "repository": {
