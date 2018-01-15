@@ -59,4 +59,21 @@ describe('Dogs', function() {
       done();
     });
   });
+
+  it('should GET a list of dogs', function(done) {
+    supertest(app)
+    .get('/api/dogs')
+    .expect(200)
+    .end(function(err, res) {
+      expect(res.body[0]).to.have.property("name");
+      expect(res.body[0].name).to.equal("Max");
+      expect(res.body[0]).to.have.property("breed");
+      expect(res.body[0].breed).to.equal("Dobermann");
+      expect(res.body[0]).to.have.property("description");
+      expect(res.body[0].description).to.equal("test dog");
+      expect(res.body[0]).to.have.property("image");
+      expect(res.body[0].image).to.equal("http://res.cloudinary.com/dqcs0clma/image/upload/v1516054739/b5jc1u5f7rczesciskxv.jpg");
+      done();
+    });
+  });
 });
