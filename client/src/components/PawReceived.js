@@ -69,7 +69,7 @@ class PawReceived extends Component {
     return (
         <div className="pawreceived" >
             <div className="paw">
-              <Link to={path}><button> Check profile {this.props.userId} </button></Link>
+              <Link to={path}><button> Check profile </button></Link>
               {this.state.displayStatus}
               <button className="paw" onClick={this.handleClick}>
                 {this.state.response}
