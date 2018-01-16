@@ -21,6 +21,9 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const env = require('dotenv').load();
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 const logger = require('morgan');
 app.use(logger('dev'));
