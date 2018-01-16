@@ -4,19 +4,22 @@ import PawReceived from './PawReceived';
 
 const AccountPawsReceived = props => {
     return (
-      <div className="accountpawsreceived">
-        {
-        props.pawsReceived.map(paw => (
-          <div key={paw.id}>
-            <PawReceived
-              id = {paw.id}
-              statusPaw = {paw.status}
-              userId = {paw.userId}
-              dogId = {paw.dogId}
-            />
-          </div>
-        ))
-       }
+      <div>
+        <div> Paws received </div>
+        <div className="accountpawsreceived">
+          {
+          props.pawsReceived.map(paw => (
+            <div key={paw.id}>
+              <PawReceived
+                id = {paw.id}
+                statusPaw = {paw.status}
+                userId = {paw.userId}
+                dogId = {paw.dogId}
+              />
+            </div>
+          ))
+         }
+        </div>
       </div>
     );
 };

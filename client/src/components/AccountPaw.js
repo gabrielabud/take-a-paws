@@ -41,7 +41,6 @@ class AccountPaw extends Component {
         self.setState({
           pawsReceived: data
         })
-        console.log(self.state.pawsReceived)
 
       })
       .catch(function(error) {
@@ -61,8 +60,6 @@ class AccountPaw extends Component {
       self.setState({
         pawsGiven: data
       })
-      console.log(self.state.pawsGiven)
-
     })
     .catch(function(error) {
       console.log(error)

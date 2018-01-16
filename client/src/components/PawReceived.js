@@ -19,7 +19,6 @@ class PawReceived extends Component {
         return results.json();
       })
       .then(function(data){
-           console.log(data[0].status)
           if (data[0].status === "accepted") {
             self.setState({
               response: "reject",
@@ -52,13 +51,11 @@ class PawReceived extends Component {
           response: "reject",
           displayStatus: "accepted"
         });
-          console.log(this.state.displayStatus);
       });
     } else if ( this.state.response === "reject" ) {
       status = "rejected"
       axios.put(`/api/requests/${this.props.id}`, { status })
       .then((response) => {
-        console.log(this.state.displayStatus);
         this.setState({
           response: "accept",
           displayStatus: "rejected"
@@ -68,10 +65,11 @@ class PawReceived extends Component {
   }
 
   render () {
+    let path = `/user/${this.props.userId}`
     return (
         <div className="pawreceived" >
             <div className="paw">
-              received from user {this.props.userId} ->
+              <Link to={path}><button> Check profile {this.props.userId} </button></Link>
               {this.state.displayStatus}
               <button className="paw" onClick={this.handleClick}>
                 {this.state.response}

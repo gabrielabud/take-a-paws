@@ -17,7 +17,6 @@ class PawGiven extends Component {
         return results.json();
       })
       .then(function(data){
-           console.log(data[0].status)
           if (data[0].status === "accepted") {
             self.setState({
               displayStatus: "accepted"

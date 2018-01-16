@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'
 import Chat from './Chat'
 
-class UserAccount extends React.Component {
+class PawUserAccount extends React.Component {
 
   constructor(props) {
     super(props)
@@ -13,7 +13,7 @@ class UserAccount extends React.Component {
 
   componentDidMount() {
     let self=this;
-    const id = sessionStorage.getItem('ownerId');
+    const id = self.props.match.params.userId
     console.log(id)
     fetch(`/users/${id}`)
       .then(function(results) {
@@ -37,12 +37,8 @@ class UserAccount extends React.Component {
       <p>{this.state.userData.username}</p>
       <p>{this.state.userData.email}</p>
       <img className="thumb" src={this.state.userData.image} />
-      <button onClick={this.props.onClick}>Back to dog</button><br/>
-      <nav>
-      <NavLink to="/chat" exact activeClassName="active">Chattttttt</NavLink>
-      </nav>
       </div>
     );
   }
 }
-export default UserAccount;
+export default PawUserAccount;

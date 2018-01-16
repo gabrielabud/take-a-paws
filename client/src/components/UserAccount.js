@@ -42,7 +42,6 @@ class UserAccount extends React.Component {
               namesData: unique,
               namesNamesData: uniqueName
             })
-            console.log(unique)
         })
         .catch(function(error) {
           console.log(error)
