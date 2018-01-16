@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "install": "cd client && npm install && npm run build && cd ..",
+    "install": "cd client && npm install && cd ..",
     "test": "npm run test-integration",
     "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.js --exit",
     "eject": "react-scripts eject"
