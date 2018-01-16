@@ -16,11 +16,7 @@ io.on('connection', (socket) => {
   })
 });
 
-// if (process.env.NODE_ENV === "production") {
-  // app.use(express.static(path.join(__dirname, '/client/build/')));
-// } else {
-  app.use(express.static(path.join(__dirname, 'client/build/')));
-// }
+app.use(express.static(path.join(__dirname, 'client/build/')));
 
 const passport = require('passport');
 const session = require('express-session');
@@ -79,9 +75,5 @@ app.get('/error', (req, res) => res.status(200).send({
 // app.get('/', (req, res) => res.status(200).send({
 //   message: "200"
 // }));
-
-app.get('/', function(req, res) {
-  res.sendFile('index.html');
-})
 
 module.exports = app;
