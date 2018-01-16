@@ -37,12 +37,13 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "start": "concurrently \"npm run paws\" \"cd client && npm start\"",
+    "start": "npm run paws",
     "build": "react-scripts build",
     "test": "npm run test-integration",
     "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.js --exit",
     "eject": "react-scripts eject",
-    "paws": "node server.js"
+    "paws": "node server.js",
+    "install": "cd client && npm install && npm run build && cd.."
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",

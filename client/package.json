@@ -40,7 +40,6 @@
     "test": "npm run test-integration",
     "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.js --exit",
     "eject": "react-scripts eject",
-    "paws": "nodemon ./server.js"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",

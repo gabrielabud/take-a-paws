@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const path = require('path');
 const http = require('http');
 const server = http.createServer(app);
 const port = process.env.PORT || 3001;
@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
 });
 
 if (process.env.NODE_ENV === "production") {
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 }
 
 const passport = require('passport');
