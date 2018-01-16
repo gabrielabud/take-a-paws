@@ -31,7 +31,7 @@ class Chat extends React.Component{
            message: this.state.message
          });
          const {message, senderId, receiverId} =this.state
-         axios.post('http://localhost:3001/api/messages', {message, senderId, receiverId})
+         axios.post('/api/messages', {message, senderId, receiverId})
          this.setState({message: ''})
        }
    }
@@ -41,7 +41,7 @@ class Chat extends React.Component{
      const userId = sessionStorage.getItem('id');
      const ownerId = sessionStorage.getItem('ownerId');
 
-     fetch(`http://localhost:3001/api/messages?senderId=${userId}&receiverId=${ownerId}`)
+     fetch(`/api/messages?senderId=${userId}&receiverId=${ownerId}`)
        .then(function(results) {
          return results.json();
        })

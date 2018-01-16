@@ -18,7 +18,7 @@ class Paw extends Component {
     let userIden = sessionStorage.getItem('id');
     let dogIden = self.props.dogId;
 
-    fetch(`http://localhost:3001/api/users/${userIden}/${dogIden}/requests`)
+    fetch(`/api/users/${userIden}/${dogIden}/requests`)
       .then(function(results) {
         return results.json();
       })
@@ -50,12 +50,12 @@ class Paw extends Component {
     let pawIden = this.state.pawId;
 
     if (this.state.pawed === "paw" ) {
-      axios.post(`http://localhost:3001/api/users/${userIden}/${dogIden}/requests`, { status, userIden, dogIden })
+      axios.post(`/api/users/${userIden}/${dogIden}/requests`, { status, userIden, dogIden })
       .then((response) => {
         this.setState({ status: "pending", pawed: 'pawed', pawId: response.data.id });
       });
     } else {
-      axios.delete(`http://localhost:3001/api/requests/${pawIden}`)
+      axios.delete(`/api/requests/${pawIden}`)
       .then((response) => {
         this.setState({ status: null, pawed: 'paw', pawId: null })
       });

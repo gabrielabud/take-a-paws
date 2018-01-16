@@ -17,7 +17,7 @@ class UserAccount extends React.Component {
     let self=this;
     const id = sessionStorage.getItem('id');
 
-    fetch(`http://localhost:3001/users/${id}`)
+    fetch(`/users/${id}`)
       .then(function(results) {
         return results.json();
       })
@@ -30,7 +30,7 @@ class UserAccount extends React.Component {
         console.log(error)
       });
 
-      fetch(`http://localhost:3001/api/messages/names?receiverId=${id}`)
+      fetch(`/api/messages/names?receiverId=${id}`)
         .then(function(results) {
           return results.json();
         })

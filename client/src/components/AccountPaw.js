@@ -18,7 +18,7 @@ class AccountPaw extends Component {
     let userIden = parseInt(sessionStorage.getItem('id'));
     let dogIden = null;
 
-    fetch(`http://localhost:3001/api/dogs`)
+    fetch(`/api/dogs`)
     .then(function(results) {
       return results.json();
     })
@@ -33,7 +33,7 @@ class AccountPaw extends Component {
         dogId: dogIden
       })
 
-      fetch(`http://localhost:3001/api/requests/${dogIden}`)
+      fetch(`/api/requests/${dogIden}`)
       .then(function(results) {
         return results.json();
       })
@@ -53,7 +53,7 @@ class AccountPaw extends Component {
       console.log(error)
     });
 
-    fetch(`http://localhost:3001/api/users/${userIden}/requests`)
+    fetch(`/api/users/${userIden}/requests`)
     .then(function(results) {
       return results.json();
     })

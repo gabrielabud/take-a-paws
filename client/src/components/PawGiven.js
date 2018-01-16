@@ -12,7 +12,7 @@ class PawGiven extends Component {
 
   componentDidMount() {
     let self=this;
-    fetch(`http://localhost:3001/api/users/${this.props.userId}/requests`)
+    fetch(`/api/users/${this.props.userId}/requests`)
       .then(function(results) {
         return results.json();
       })

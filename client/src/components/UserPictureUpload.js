@@ -26,7 +26,7 @@ class DogForm extends Component {
 
   fileUpload(file){
     const id = sessionStorage.getItem('id');
-    const url = `http://localhost:3001/api/users/image/${id}`;
+    const url = `/api/users/image/${id}`;
     const formData = new FormData();
     formData.append('file',file)
     const config = {

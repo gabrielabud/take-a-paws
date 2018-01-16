@@ -40,7 +40,7 @@ export default class SignUpForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const { firstname, lastname, email, username, password, city, postcode, type } = this.state;
-    axios.post('http://localhost:3001/signup', { firstname, lastname, email, username, password, city, postcode, type })
+    axios.post('/signup', { firstname, lastname, email, username, password, city, postcode, type })
       .then((response) => this.setState({ status: response.data.message}));
   }
 
