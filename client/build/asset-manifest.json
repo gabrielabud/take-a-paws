@@ -1,10 +1,10 @@
 {
-  "main.css": "static/css/main.a04878d2.css",
-  "main.css.map": "static/css/main.a04878d2.css.map",
-  "main.js": "static/js/main.3c1d01b9.js",
-  "main.js.map": "static/js/main.3c1d01b9.js.map",
-  "static/media/paw-full.svg": "static/media/paw-full.60cf3725.svg",
-  "static/media/paw-outline.svg": "static/media/paw-outline.c30bf388.svg",
-  "static/media/take-a-paws.svg": "static/media/take-a-paws.4726f715.svg",
-  "static/media/teckel.jpg": "static/media/teckel.1df12c87.jpg"
+  "main.css": "client/build/static/css/main.a04878d2.css",
+  "main.css.map": "client/build/static/css/main.a04878d2.css.map",
+  "main.js": "client/build/static/js/main.3c1d01b9.js",
+  "main.js.map": "client/build/static/js/main.3c1d01b9.js.map",
+  "static/media/paw-full.svg": "client/build/static/media/paw-full.60cf3725.svg",
+  "static/media/paw-outline.svg": "client/build/static/media/paw-outline.c30bf388.svg",
+  "static/media/take-a-paws.svg": "client/build/static/media/take-a-paws.4726f715.svg",
+  "static/media/teckel.jpg": "client/build/static/media/teckel.1df12c87.jpg"
 }
