@@ -1,1 +1,1 @@
-web: npm run paws
+web: npm start
