@@ -1,5 +1,6 @@
 import React from 'react';
 import UserPictureUpload from './UserPictureUpload';
+import UserDescriptionUpdate from './UserDescriptionUpdate';
 import Messenger from './Messenger'
 import AccountPaw from './AccountPaw';
 
@@ -26,6 +27,7 @@ class UserAccount extends React.Component {
           self.setState({
             userData: data
           })
+          console.log(data)
       })
       .catch(function(error) {
         console.log(error)
@@ -49,13 +51,17 @@ class UserAccount extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
       <UserPictureUpload />
+      <br/>
+      <UserDescriptionUpdate/>
       <p>{this.state.userData.firstname}</p>
       <p>{this.state.userData.lastname}</p>
       <p>{this.state.userData.username}</p>
       <p>{this.state.userData.email}</p>
+      <p>{this.state.userData.city}</p>
       <img className="thumb" src={this.state.userData.image} />
       <Messenger messages={this.state.namesData} names={this.state.namesNamesData}/>
       <AccountPaw />

@@ -21,6 +21,7 @@ module.exports = (app) => {
   app.put('/api/requests/:requestId', requestsController.update);
   app.delete('/api/requests/:requestId', requestsController.destroy);
   app.post('/api/users/image/:id', fileParser, usersController.update);
+  app.post('/api/users/description/:id', fileParser, usersController.updateDescription);
   app.post('/api/messages', messagesController.create);
   app.get('/api/messages', messagesController.list)
   app.get('/api/messages/names', messagesController.getNames)

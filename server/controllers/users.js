@@ -26,6 +26,22 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
+  updateDescription(req, res){
+    const description = req.body.description;
+    User.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then((user) =>{
+      user.updateAttributes({
+        description: description
+      })
+      return user
+    })
+    .then((user) => res.status(200).send(user))
+    .catch(error => res.status(400).send(error));
+  },
+
   update(req, res) {
     var url = null;
     const imageFile = req.files.file;
