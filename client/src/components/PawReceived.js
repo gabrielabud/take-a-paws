@@ -14,7 +14,7 @@ class PawReceived extends Component {
 
   componentDidMount() {
     let self=this;
-    fetch(`http://localhost:3001/api/users/${this.props.userId}/${this.props.dogId}/requests`)
+    fetch(`/api/users/${this.props.userId}/${this.props.dogId}/requests`)
       .then(function(results) {
         return results.json();
       })
@@ -46,7 +46,7 @@ class PawReceived extends Component {
       status = "accepted";
       userId = this.props.userId;
       dogId = this.props.dogId;
-      axios.put(`http://localhost:3001/api/requests/${this.props.id}`, { status })
+      axios.put(`/api/requests/${this.props.id}`, { status })
       .then((response) => {
         this.setState({
           response: "reject",
@@ -56,7 +56,7 @@ class PawReceived extends Component {
       });
     } else if ( this.state.response === "reject" ) {
       status = "rejected"
-      axios.put(`http://localhost:3001/api/requests/${this.props.id}`, { status })
+      axios.put(`/api/requests/${this.props.id}`, { status })
       .then((response) => {
         console.log(this.state.displayStatus);
         this.setState({

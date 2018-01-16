@@ -20,7 +20,7 @@ class DogProfile extends Component {
     let self = this;
     const userId = sessionStorage.getItem('id');
     const id = self.props.match.params.dogId
-    fetch(`http://localhost:3001/api/dogs/${id}`)
+    fetch(`/api/dogs/${id}`)
       .then(function(results) {
         return results.json();
       })

@@ -14,7 +14,7 @@ class UserAccount extends React.Component {
   componentDidMount() {
     let self=this;
     const id = sessionStorage.getItem('ownerId');
-    fetch(`http://localhost:3001/users/${id}`)
+    fetch(`/users/${id}`)
       .then(function(results) {
         return results.json();
       })

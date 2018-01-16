@@ -36,7 +36,7 @@ class App extends Component {
   componentDidMount() {
     let self=this;
 
-    fetch("http://localhost:3001/api/dogs")
+    fetch("/api/dogs")
       .then(function(results) {
         return results.json();
       })

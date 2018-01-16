@@ -11,7 +11,6 @@
     "bootstrap": "^3.3.7",
     "chai": "^4.1.2",
     "cloudinary": "^1.9.1",
-    "concurrently": "^3.5.1",
     "connect-multiparty": "^2.1.0",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
@@ -36,7 +35,7 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "start": "concurrently \"npm run paws\" \"cd client && npm start\"",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "npm run test-integration",
     "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.js --exit",
@@ -70,5 +69,6 @@
   "bugs": {
     "url": "https://github.com/gabrielabud/take-a-paws/issues"
   },
-  "homepage": "https://github.com/gabrielabud/take-a-paws#readme"
+  "homepage": "https://github.com/gabrielabud/take-a-paws#readme",
+  "proxy": "http://localhost:3001"
 }
