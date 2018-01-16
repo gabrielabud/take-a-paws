@@ -1,1 +1,3 @@
-Take a PAWS
+Take a PAWS ![]
+
+![Logo](/client/src/images/take-a-paws.svg)
