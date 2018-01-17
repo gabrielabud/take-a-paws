@@ -14,7 +14,6 @@ class PawUserAccount extends React.Component {
   componentDidMount() {
     let self=this;
     const id = self.props.match.params.userId
-    console.log(id)
     fetch(`/users/${id}`)
       .then(function(results) {
         return results.json();
